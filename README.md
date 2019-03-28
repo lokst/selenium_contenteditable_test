@@ -21,9 +21,10 @@ container, to port 5909 on your host machine.
 
 ### Start a VNC session
 1. Install a VNC client. Real VNC has one for macOS: https://www.realvnc.com/en/connect/download/viewer/macos/
-2. Open the VNC client and connect to `localhost::5909`
+2. Open the VNC client and connect to `localhost::5909`. This will connect to the VNC service started by the Docker container.
 3. In the VNC session, you will find an open terminal with the working directory in `/app`
 4. Type `bundle exec ruby browser_test.rb` to run the Selenium tests. This will start up Firefox and run the tests,
-first sending the :shift :home keys to a contenteditable div, and then sending the same key combination to an input
+first sending the `:shift :home` keys to a contenteditable div, and then sending the same key combination to an input
 text field. Screenshots are also taken with Capybara and saved to the `/app/tmp` directory
 on the container.
+5. The browser test source can be easily modified in `/app/browser_test.rb`
